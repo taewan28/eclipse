@@ -11,7 +11,7 @@
 	<p>이것은 메뉴 또는 조회 동작을 할 떄 사용되는 방식입니다.</p>
 	<hr>
 	<ul>
-		<li><a href="5_param_receive.jsp?name=sana&age=23">name,age 2개의 파라미터 보내기</a></li>
+		<li><a href="5_param_receive.jsp?name=김사나&age=23">name,age 2개의 파라미터 보내기</a></li>
 			<!-- 2개 값이 모두 출력됩니다. -->
 		<li><a href="5_param_receive.jsp?name=sana">name,age 2개의 파라미터 보내기-age 파라미터 없을 떄</a></li>
 			<!-- age는 null -->

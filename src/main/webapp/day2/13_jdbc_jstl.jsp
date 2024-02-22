@@ -21,7 +21,8 @@
 	pageContext.setAttribute("list",list);
 %>
 	<table>
-
+	<!-- el 기호에서 지정된 이름 list 애트리뷰트를 가져오는 동작 : getAttribute(list) 
+				pageContext.getAttribute(list); 실행하기-->
 	<c:forEach items="${list }" var="vo" varStatus="status">
 	<tr>
 		<td><c:out value="${vo.customId }"/></td>
