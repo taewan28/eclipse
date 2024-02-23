@@ -1,6 +1,7 @@
 package servlet.day3;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,7 +38,8 @@ public class ProductRegServlet extends HttpServlet {
 		String pname = request.getParameter("pname");
 		String temp = request.getParameter("price");
 		int price = 0;
-		if(temp.length() !=0) Integer.parseInt(temp);
+		if(temp.length() !=0) 
+			price = Integer.parseInt(temp);
 		
 
 		ProductVo vo = new ProductVo(pcode, category, pname, price);
@@ -45,9 +47,20 @@ public class ProductRegServlet extends HttpServlet {
 		
 
 		TblProductDao dao = new TblProductDao();
-		dao.Productjoin(vo);
+		int result = dao.insert(vo);
 		
-		response.sendRedirect("ProductReg.cc");
-
+		//response.sendRedirect("Products.cc");
+		
+		String message = "상품 등록이 완료되었습니다.";
+		if(result ==0) {
+			message = "상품 등록 오류가 생겼습니다.";
+		}
+			
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.print("<script>");
+			out.print("alert('"+ message +"');");
+			out.print("location.href='Products.cc';");
+			out.print("</script>");
 	}
 }

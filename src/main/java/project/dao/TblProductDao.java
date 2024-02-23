@@ -6,14 +6,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import project.vo.BuyVo;
-import project.vo.CustomerVo;
 import project.vo.ProductVo;
 
 public class TblProductDao {
@@ -120,10 +117,11 @@ public class TblProductDao {
             return list;
     }
     
-    public void Productjoin(ProductVo vo){
-        String sql = "insert into tbl_product\n" +
-                      "values (?,?,?,?,)";   //할일 : INSERT
-        try(//auto close
+    public int insert(ProductVo vo){
+        String sql = "INSERT INTO TBL_PRODUCT\n" +
+                      "VALUES (?,?,?,?)";
+        int result=0;
+        try(
             Connection connection = getConnection();                    //1) 서버와의 연결
             PreparedStatement pstmt = connection.prepareStatement(sql);     //2) 연결된 서버로 실행할 SQL전달. 서버가 SQL컴파일
         ){
@@ -134,11 +132,11 @@ public class TblProductDao {
             pstmt.setString(3,vo.getPname());
             pstmt.setInt(4, vo.getPrice());
 
-            pstmt.executeUpdate();                                       //3) 연결된 서버에 실행 요청
+            result = pstmt.executeUpdate();                                       //3) 연결된 서버에 실행 요청
         }catch (SQLException e){
             System.out.println("Productjoin 실행 예외 발생 : " + e.getMessage());
         }//finally 없음
-        
+        return result;
     }
 
 }

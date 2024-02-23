@@ -15,20 +15,20 @@
   <h3 style="text-align: center;">상품 등록</h3>
   <hr>
           <form action="ProductReg.cc" method="post">
-            <ul class="Productjoin-wrap">
+            <ul class="join-wrap">
               <li>상품코드</li>
               <li>
                 <input name="pcode" type="text"
                  					 placeholder="상품코드를 입력해 주세요." />
               </li>
               <li>상품카테고리</li>
-              <li><input id="category" name="category" type="text" placeholder="상품카테고리 입력해 주세요." /></li>
+              <li><input id="category" name="category" type="text" placeholder="상품카테고리 입력해 주세요.(최대10글자)" /></li>
               <li>상품이름</li>
               <li><input id="pname" name="pname" type="text" placeholder="상품이름 입력해 주세요." /></li>
               <li>상품갯수</li>
               <li><input name="price" type="text" placeholder="상품갯수" /></li>
             </ul>
-            <button class="Productjoin-btn">상품 등록</button>
+            <button class="join-btn">상품 등록</button>
           </form>
         </div>
   <script src="assets/js/script.js"></script>

@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 import project.dao.TblProductDao;
 import project.vo.ProductVo;
 
-@WebServlet(urlPatterns= {"/products.cc"}, description="상품 전체 조회")
+@WebServlet(urlPatterns= {"/Products.cc"}, description="상품 전체 조회")
 public class ProductServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;

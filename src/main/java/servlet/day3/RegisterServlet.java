@@ -42,7 +42,7 @@ public class RegisterServlet extends HttpServlet {
 		//나이가 필수 입력이 아니라면 값이 비어 있습니다. 그 때 parseInt 결과 확인합니다.
 		int age = 0;
 		//form 태그 요소의 name="age"가 있으므로 temp 가 null 일 경우는 없습니다.
-		if(temp.length() !=0) Integer.parseInt(temp);
+		if(temp.length() !=0) age = Integer.parseInt(temp);
 		
 		//dao 의 메소드 인자로 전달할 vo 객체 생성하기
 		CustomerVo vo = new CustomerVo(userid, name, email, age, null);

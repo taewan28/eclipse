@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="assets/css/Project.css">
+<link rel="stylesheet" href="assets/css/project.css">
 </head>
 <body>
 	<h3>상품 전체 조회</h3>
