@@ -16,7 +16,6 @@ public class CustomerDto {
 	private String customId;
     private String name;
     private String email;
-    private int quantity;
     private int age;
-    private Date reg_date;
+    private Date regdate;
 }

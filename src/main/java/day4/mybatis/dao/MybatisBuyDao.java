@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import day4.mybatis.dto.BuyDto;
+import day4.mybatis.dto.CustomerBuyDto;
 import mybatis.SqlSessionBean;
 import project.vo.BuyVo;
 
@@ -34,28 +35,36 @@ public class MybatisBuyDao {
    //마이바티스는 auto commit 이 아닙니다.
    public int insert(BuyDto vo) {
       SqlSession sqlSession = sessionFactory.openSession();
-      
       int result = sqlSession.insert("tblbuy.insert",vo);
       sqlSession.commit();
       sqlSession.close();
       return result;
    }
+   public int delete(int buyidx) {
+	   SqlSession sqlSession = sessionFactory.openSession();
+	   int result = sqlSession.delete("tblbuy.delete", buyidx);
+	   sqlSession.commit();
+	   sqlSession.close();
+	   return result;
+   }
    
    public int update(Map<String, Integer> map) {
-      SqlSession sqlSession = sessionFactory.openSession();
-      
+      SqlSession sqlSession = sessionFactory.openSession();   
       int result = sqlSession.update("tblbuy.update", map);
       sqlSession.commit();
       sqlSession.close();
       return result;
    }
    
-   public int delete(int buyidx) {
-      SqlSession sqlSession = sessionFactory.openSession();
-      
-      int result = sqlSession.delete("tblbuy.delete", buyidx);
-      sqlSession.commit();
-      sqlSession.close();
-      return result;
-   }
+   public List<CustomerBuyDto> selectCustomerBuyList(String customid) {
+	      SqlSession sqlSession = sessionFactory.openSession();
+	      List<CustomerBuyDto> list = sqlSession.selectList("tblbuy.selectCustomerBuyList",customid);
+	      sqlSession.close();
+	      return list;
+	   }
+   
+   
+   
+   
+   
 }

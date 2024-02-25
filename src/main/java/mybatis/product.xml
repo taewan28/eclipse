@@ -9,4 +9,20 @@
         	WHERE CATEGORY = #{category} 
         	ORDER BY PNAME
      </select>
+     
+     <select id="selectByPname" resultType="ProductDto" parameterType="String" >
+        SELECT *FROM TBL_PRODUCT
+       		WHERE PNAME LIKE '%' || #{pname} || '%'
+        	ORDER BY CATEGORY
+     </select>
+     
+     <select id="Allselect" resultType="ProductDto">
+     	SELECT * FROM TBL_PRODUCT
+     </select>
+     
+     <insert id="insert" parameterType="ProductDto">
+        INSERT INTO TBL_PRODUCT
+           VALUES(#{pcode},#{category},#{pname},#{price})
+     </insert>
+     
  </mapper>
