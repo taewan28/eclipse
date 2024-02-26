@@ -16,9 +16,9 @@ import project.vo.BuyVo;
 public class MybatisSessionTest {
 
 	public static void main(String[] args) {
-		//testProduct();
+		testProduct();
 		//testBuy();
-		testCustomer();
+		//testCustomer();
 	}
 	
 	public static void testProduct(){
@@ -26,8 +26,9 @@ public class MybatisSessionTest {
 		System.out.println("dao 객체 : " + dao);
 		
 		System.out.println("====== SELECTByCategory 테스트 =====");
-		List<ProductDto> list1 = dao.SELECTByCategory("B2");
+		List<ProductDto> list1 = dao.SELECTByCategory("B1");
 		System.out.println(list1);
+		
 		
 		System.out.println("====== selectByPname 테스트 =====");
 		List<ProductDto> list2 = dao.selectByPname("애플");

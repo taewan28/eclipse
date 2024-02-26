@@ -17,12 +17,12 @@
 		<!-- list 이름의 애트리뷰를 대상으로 합니다. 애트리뷰트 저장은 서블릿에서-->
 		<c:forEach items="${list }" var="vo" varStatus="status">
 			<ul class="row">
-				<li><c:out value="${status.index+1 }"/></li>
-				<li><c:out value="${vo.buy_IDX }"/></li>
+				<!-- <li><c:out value="${status.index+1 }"/></li>-->
+				<li><c:out value="${vo.buyIdx }"/></li>
 				<li><c:out value="${vo.customid }"/></li>
-				<li><c:out value="${vo.pcode }" /></li>
+				<li><c:out value="${vo.pcode }"/></li>
 				<li><c:out value="${vo.quantity }"/></li>
-				<li><c:out value="${vo.buy_date }"/></li>
+				<li><fmt:formatDate value="${vo.buyDate }" pattern="yyyy-mm-dd a hh:mm:ss"/></li>
 
 			</ul>
 			</c:forEach>

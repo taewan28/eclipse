@@ -1,0 +1,11 @@
+-- 전체 조회
+select * from TBL_PRODUCT;
+-- 카테고리 조회
+SELECT * from TBL_PRODUCT where category = 'B2';
+-- 상품명 조회
+select * from TBL_PRODUCT where pname like '%'||'사과'||'%';
+-- 가격대 조회
+select * from TBL_PRODUCT where price between 10000 and 40000;
+-- 위의 3가지 모두 적용하기
+select * from TBL_PRODUCT 
+		where category = 'B2' and pname like '%'||'사과'||'%' and(price between 10000 and 40000);
